@@ -1,0 +1,14 @@
+extends layout/baseAuth.pug
+block variables
+    - const choice = "Sign In"
+    - const choiceLink = "sign.html"
+    - const discription = "Back to"
+    - const title = "E-mail"
+block content
+    article.author
+        div.container
+            h1.author__text Enter your e-mail to reset your password
+            form.author__form
+                input.email(type="email", placeholder="name@email.com" name="email")
+                div.author__submit
+                    button(type="submit") Send

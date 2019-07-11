@@ -1,0 +1,18 @@
+extends layout/baseAuth.pug
+block variables
+    - const choice = "Sign Up"
+    - const choiceLink = "signUp.html"
+    - const discription = "Do not have an account?"
+    - const title = "Sign In"
+block content
+    article.author
+        div.container
+            h1.author__text Sign In
+            form.author__form
+                input.email(type="email", placeholder="name@email.com" name="email")
+                input.password(type="password" name="password",placeholder="Password")
+                div.author__forgot
+                    a(href="#") Forgot password?
+                div.author__submit
+                    button(type="submit") Sign in
+

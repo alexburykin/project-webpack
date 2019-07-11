@@ -1,0 +1,29 @@
+extends layout/baseAuth.pug
+block variables
+    - const choice = "Complete"
+    - const choiceLink = "signUp.html"
+    - const discription = "Already have an account?"
+    - const title = "Log In"
+block content
+    article.author
+        div.container
+            h1.author__text Complete your account
+            form.author__form(action="/api/complete" method="POST")
+                input.email#password(type="password" placeholder="Create password" name="createPassword")
+                .progress.d-none
+                    .div
+                    .div
+                    .div
+                input.password(type="password" placeholder="Confirm password" name="confirmPassword")
+                .author__check
+                    input#check(type="checkbox")
+                    label(for="check") I agree to the myFixer.com
+                    a(href="###") Terms of Service
+                .author__check
+                    input#check1(type="checkbox")
+                    label(for="check1") I agree to the myFixer.com
+                    a(href="###") Terms of Service
+                figure.recaptcha
+                div.author__submit
+                    button(type="submit") Done
+    //- script(src="./assets/js/main.js")

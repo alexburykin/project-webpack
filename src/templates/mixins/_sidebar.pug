@@ -1,0 +1,32 @@
+- 
+    const sidebarItems = [
+        {
+            pathToImg: "./images/search.svg",
+            active: false
+        },
+        {
+            pathToImg: "./images/person.png",
+            active: true
+        },
+        {
+            pathToImg: "./images/messages.svg",
+            active: false
+        },
+        {
+            pathToImg: "../images/callendar.svg",
+            active: false
+        }
+    ];
+
+mixin sidebar(item)
+    li.menu__item
+        a.menu__link(href= "#")
+            img(src= item.pathToImg)
+            if (item.notification)
+                .ellipse
+                    p.ellipse__number 1
+            if (item.active)
+                img.line(src="./img/line.svg", alt="")
+
+each item in sidebarItems
+    +sidebar(item)
