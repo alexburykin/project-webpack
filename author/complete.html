@@ -1,0 +1,44 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log In</title>
+    <style></style>
+  <link href="../style/user.css" rel="stylesheet"><link href="../style/styleAuth.css" rel="stylesheet"></head>
+  <body>
+    <main>
+      <header class="header">
+        <figure class="header__logo"></figure>
+        <div class="header__question"><span>Already have an account?</span><a href="signUp.html">Complete</a></div>
+      </header>
+      <article class="author">
+        <div class="container">
+          <h1 class="author__text">Complete your account</h1>
+          <form class="author__form" action="/api/complete" method="POST">
+            <input class="email" id="password" type="password" placeholder="Create password" name="createPassword">
+            <div class="progress d-none">
+              <div class="div"></div>
+              <div class="div"></div>
+              <div class="div"></div>
+            </div>
+            <input class="password" type="password" placeholder="Confirm password" name="confirmPassword">
+            <div class="author__check">
+              <input id="check" type="checkbox">
+              <label for="check">I agree to the myFixer.com</label><a href="###">Terms of Service</a>
+            </div>
+            <div class="author__check">
+              <input id="check1" type="checkbox">
+              <label for="check1">I agree to the myFixer.com</label><a href="###">Terms of Service</a>
+            </div>
+            <figure class="recaptcha"></figure>
+            <div class="author__submit">
+              <button type="submit">Done</button>
+            </div>
+          </form>
+        </div>
+      </article>
+    </main>
+  <script type="text/javascript" src="../app.bundle.js"></script></body>
+</html>

@@ -1,0 +1,261 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  width: 450px;
+  margin: 0 auto; }
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #dce1eb; }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 25px; }
+  .header__logo {
+    width: 140px;
+    height: 35px;
+    background-image: url(images/logo.png);
+    background-size: cover;
+    background-repeat: no-repeat; }
+  .header__question {
+    display: flex;
+    align-items: center; }
+    .header__question span {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.28px;
+      color: #222428; }
+    .header__question a {
+      font-family: "Roboto", sans-serif;
+      color: #1030e7;
+      font-size: 16px;
+      font-weight: 700;
+      padding-left: 15PX; }
+
+article {
+  width: 630px;
+  margin: 135px auto;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(0, 45, 113, 0.06);
+  border-radius: 10px; }
+
+.author__text {
+  color: #002396;
+  font-family: "Exo2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.4px;
+  padding-top: 72px;
+  width: 75%; }
+
+.author__form {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column; }
+
+.author__forgot {
+  padding-bottom: 15px;
+  position: relative; }
+  .author__forgot a {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.28px;
+    color: #222428;
+    position: absolute;
+    top: -10px;
+    right: 0; }
+
+.author__submit {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-bottom: 80px; }
+  .author__submit button {
+    font-family: "Exo2", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.4px;
+    background-color: #0AD69C;
+    color: #fff;
+    padding: 10px 50px;
+    border: none; }
+    .author__submit button:hover {
+      background-color: #1acedf;
+      cursor: pointer; }
+
+.author__name {
+  display: flex;
+  justify-content: space-between; }
+  .author__name .name {
+    width: 45%;
+    padding: 10.5px 4px;
+    margin-bottom: 15px;
+    background: #FCFCFC;
+    border: 2px solid #F2F2F2;
+    border-radius: 2px; }
+    .author__name .name:focus {
+      outline: none;
+      box-shadow: -2px 0 0 0 #1030e7; }
+
+.author__check {
+  display: flex;
+  height: 40px;
+  width: 400px;
+  align-items: center; }
+  .author__check a, .author__check label {
+    color: #222428;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.28px;
+    line-height: 16px; }
+  .author__check a {
+    color: #1030e7;
+    padding-left: 15px; }
+
+input[type="checkbox"] {
+  display: none; }
+
+input[type="checkbox"] + label:before {
+  border: 2px solid #f2f2f2;
+  border-radius: 2px;
+  color: transparent;
+  content: "\2713";
+  display: inline-block;
+  font-size: 20px;
+  height: 20px;
+  line-height: 22px;
+  margin: -5px 5px 0 0;
+  text-align: center;
+  transition: color ease .3s;
+  vertical-align: middle;
+  width: 20px; }
+
+input[type="checkbox"]:checked + label:before {
+  color: #0AD69C; }
+
+.email, .password, .username {
+  padding: 10.5px;
+  background: #FCFCFC;
+  border: 2px solid #F2F2F2;
+  border-radius: 2px;
+  margin-bottom: 15px; }
+  .email:focus, .password:focus, .username:focus {
+    outline: none;
+    box-shadow: -3px 0px 0px 0 #1030e7; }
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; }
+  .progress div {
+    width: 32%;
+    height: 6px;
+    background: #EBEFF3;
+    border-radius: 2px; }
+
+.d-none {
+  display: none; }
+
+.circle {
+  width: 1000px;
+  height: 915px;
+  background-image: url(images/circle.svg);
+  margin: 0 auto;
+  display: block;
+  position: relative; }
+  .circle__letter {
+    display: block;
+    background-image: url(images/letter.svg);
+    width: 150px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 40%;
+    left: 43%; }
+
+.ready {
+  position: absolute;
+  top: 63%;
+  left: 18%; }
+  .ready__go {
+    font-family: "Exo2", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #2A74DB; }
+  .ready span {
+    display: block;
+    padding-top: 20px;
+    font-family: "Exo2", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #000000; }
+
+.recaptcha {
+  background-image: url(images/recaptcha.svg);
+  width: 210px;
+  height: 60px;
+  padding-bottom: 20px;
+  background-repeat: no-repeat; }
+
+
