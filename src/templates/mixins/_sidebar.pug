@@ -13,7 +13,7 @@
             active: false
         },
         {
-            pathToImg: "../images/callendar.svg",
+            pathToImg: "./images/callendar.svg",
             active: false
         }
     ];
@@ -26,7 +26,7 @@ mixin sidebar(item)
                 .ellipse
                     p.ellipse__number 1
             if (item.active)
-                img.line(src="./img/line.svg", alt="")
+                img.line(src="./images/line.svg", alt="")
 
 each item in sidebarItems
     +sidebar(item)
