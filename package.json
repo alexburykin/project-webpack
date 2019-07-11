@@ -8,7 +8,7 @@
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "start:dev": "webpack-dev-server --mode=development",
-    "eslint": "eslint --init"
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.3",
