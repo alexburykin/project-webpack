@@ -54,12 +54,7 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "style/user.css",
-            template: "./src/scss/user.scss"
-        }),
-        new MiniCssExtractPlugin({
-            filename: "style/styleAuth.css",
-            template: "./src/scss/styleAuth.scss",
+            filename: "styleAuth.css"
         }),
         new HtmlWebpackPlugin({
             filename: "author/email.html",
