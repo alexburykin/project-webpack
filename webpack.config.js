@@ -13,7 +13,7 @@ const config = {
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 3000,
+        port: 8080,
     },module: {
         rules: [
             {
@@ -54,22 +54,22 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "styleAuth.css"
+            filename: "style.css"
         }),
         new HtmlWebpackPlugin({
-            filename: "author/email.html",
+            filename: "auth/email.html",
             template: "./src/templates/email.pug"
         }),
         new HtmlWebpackPlugin({
-            filename: "author/sign.html",
+            filename: "auth/sign.html",
             template: "./src/templates/sign.pug"
         }),
         new HtmlWebpackPlugin({
-            filename: "author/ready.html",
+            filename: "auth/ready.html",
             template: "./src/templates/almostReady.pug"
         }),
         new HtmlWebpackPlugin({
-            filename: "author/signUp.html",
+            filename: "auth/signUp.html",
             template: "./src/templates/signUp.pug"
         }),
         new HtmlWebpackPlugin({
@@ -77,7 +77,7 @@ const config = {
             template: "./src/templates/user1.pug"
         }),
         new HtmlWebpackPlugin({
-            filename: "author/complete.html",
+            filename: "auth/complete.html",
             template: "./src/templates/complete.pug"
         })
     ],
