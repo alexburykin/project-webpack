@@ -1,11 +1,11 @@
-https://ellizar.github.io/project-webpack/user1.html
+https://alexburykin.github.io/project-webpack/templates/user.html
 
-https://ellizar.github.io/project-webpack/author/sign.html
+https://alexburykin.github.io/project-webpack/templates/sign.html
 
-https://ellizar.github.io/project-webpack/author/email.html
+https://alexburykin.github.io/project-webpack/templates/email.html
 
-https://ellizar.github.io/project-webpack/author/ready.html
+https://alexburykin.github.io/project-webpack/templates/ready.html
 
-https://ellizar.github.io/project-webpack/author/signUp.html
+https://alexburykin.github.io/project-webpack/templates/signUp.html
 
-https://ellizar.github.io/project-webpack/author/complete.html
+https://alexburykin.github.io/project-webpack/templates/complete.html

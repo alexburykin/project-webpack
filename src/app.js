@@ -1,2 +1,2 @@
-import "./scss/styleAuth.scss"
+import "./scss/auth.scss"
 import "./scss/user.scss";

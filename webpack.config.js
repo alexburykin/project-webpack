@@ -1,29 +1,60 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const fs = require('fs');
 
+let templates = [];
+let styles = [];
+let stylesFolder = fs.readdirSync('src/scss');
+let templatesFolder = fs.readdirSync('src/templates');
+
+templatesFolder.forEach(file => {
+    if (file.match(/\.pug$/)) {
+        let filename = file.substring(0, file.length - 4);
+        templates.push(
+          new HtmlWebpackPlugin({
+              template: `src/templates/${filename}.pug`,
+              filename: `templates/${filename}.html`,
+              inject: false
+          })
+        );
+    }
+});
+
+stylesFolder.forEach(file => {
+    if (file.match(/\.scss$/) && file.charAt(0) !== '_') {
+        let filename = file.substring(0, file.length - 5);
+        styles.push(
+          new MiniCssExtractPlugin({
+              template: `./src/scss/${filename}.scss`,
+              filename: `style/${filename}.css`,
+          }),
+        );
+    }
+});
 
 const config = {
     entry: {
         app: "./src/app.js"
     },
     output: {
-        path: path.resolve(__dirname,  "dist"),
+        path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js",
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 8080,
-    },module: {
+        port: 3000,
+    }, module: {
         rules: [
             {
                 test: /\.pug$/,
                 use: [{
-                        loader: "pug-loader",
-                        options: {
-                            pretty: true
-                        }
+                    loader: "pug-loader",
+                    options: {
+                        pretty: true
                     }
+                }
                 ]
             },
             {
@@ -31,12 +62,12 @@ const config = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
-                        options:{
+                        options: {
                             hmr: process.env.NODE_ENV === "development"
                         }
                     },
-                'css-loader',
-                'sass-loader',
+                    'css-loader',
+                    'sass-loader',
                 ]
             },
             {
@@ -53,39 +84,14 @@ const config = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: "style.css"
-        }),
-        new HtmlWebpackPlugin({
-            filename: "auth/email.html",
-            template: "./src/templates/email.pug"
-        }),
-        new HtmlWebpackPlugin({
-            filename: "auth/sign.html",
-            template: "./src/templates/sign.pug"
-        }),
-        new HtmlWebpackPlugin({
-            filename: "auth/ready.html",
-            template: "./src/templates/almostReady.pug"
-        }),
-        new HtmlWebpackPlugin({
-            filename: "auth/signUp.html",
-            template: "./src/templates/signUp.pug"
-        }),
-        new HtmlWebpackPlugin({
-            filename: "user1.html",
-            template: "./src/templates/user1.pug"
-        }),
-        new HtmlWebpackPlugin({
-            filename: "auth/complete.html",
-            template: "./src/templates/complete.pug"
-        })
+        ...styles,
+        ...templates,
+        new CleanWebpackPlugin(),
     ],
 };
 
-module.exports = (env,argv) => {
-    if(argv.mode === "development"){}
-    if (argv.mode === 'production') {}
-
+module.exports = (env, argv) => {
+    if (argv.mode === "development") { }
+    if (argv.mode === 'production') { }
     return config;
-}
+};
